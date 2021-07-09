@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -76,8 +79,10 @@ public class UIManager : MonoBehaviour
         ValidateAndStart(() =>
         {
             _Task.SetActive(true);
-            _TaskTimeLimit.text = TaskManager.Inst.TaskDuration.ToString() + " SEKUNDI";
-            _TaskThreeStarTimeLimit.text = TaskManager.Inst.ThreeStarDuration.ToString() + " SEKUNDI = ";
+            // _TaskTimeLimit.text = TaskManager.Inst.TaskDuration.ToString() + " SEKUNDI";
+            // _TaskThreeStarTimeLimit.text = TaskManager.Inst.ThreeStarDuration.ToString() + " SEKUNDI = ";
+            setLocalText("broj_sekundi", _TaskTimeLimit, new Dictionary<string, object> { ["NUM_SEC"] = TaskManager.Inst.TaskDuration.ToString() });
+            setLocalText("broj_sekundi", _TaskThreeStarTimeLimit, new Dictionary<string, object> { ["NUM_SEC"] = TaskManager.Inst.ThreeStarDuration.ToString() });
             TaskManager.Inst.HandCleaned = false;
         });
     }
@@ -94,7 +99,8 @@ public class UIManager : MonoBehaviour
         
         foreach(var timer in _TimeDisplay)
         {
-            timer.text = TaskManager.Inst.TaskDuration.ToString() + " SEKUNDI";
+            // timer.text = TaskManager.Inst.TaskDuration.ToString() + " SEKUNDI";
+            setLocalText("broj_sekundi", timer, new Dictionary<string, object> { ["NUM_SEC"] = TaskManager.Inst.TaskDuration.ToString()});
         }
     }
 
@@ -164,9 +170,10 @@ public class UIManager : MonoBehaviour
     internal void DisplayVictoryScreen(int remainingTime, int stars)
     {
         _LevelCompleted.SetActive(true);
-        _LevelCompletedTimeText.text = remainingTime.ToString() + " SEKUNDI";
+        // _LevelCompletedTimeText.text = remainingTime.ToString() + " SEKUNDI";
+        setLocalText("broj_sekundi", _LevelCompletedTimeText, new Dictionary<string, object> { ["NUM_SEC"] = remainingTime.ToString() });
 
-        for(int i=0; i< _LevelCompletedStars.Length; i++)
+        for (int i=0; i< _LevelCompletedStars.Length; i++)
         {
             if(i+1 == stars)
             {
@@ -188,6 +195,20 @@ public class UIManager : MonoBehaviour
         else
         {
             _GameOverScreen.SetActive(true);
+        }
+    }
+
+    private void setLocalText(string key, Text textComponent, Dictionary<string, object> dict)
+    {
+        IList<object>  args = new List<object> { dict };
+        AsyncOperationHandle<string> op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", key, args);
+        if (op.IsDone)
+        {
+            textComponent.text = op.Result;
+        }
+        else
+        {
+            op.Completed += (o) => textComponent.text = o.Result;
         }
     }
 }

@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: e526babed966c42269b075ff97269378
+  m_Entries:
+  - m_Id: 315976835072
+    m_Key: odaberite_razinu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2383319916544
+    m_Key: pokreni_igru
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4357645918208
+    m_Key: izlaz_igre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6012311429120
+    m_Key: savjeti_upute
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6428373803008
+    m_Key: savjeti_upute_opis_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6492836061184
+    m_Key: savjeti_upute_opis_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6569340166144
+    m_Key: zatvori
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7447291879424
+    m_Key: preostalo_vrijeme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7792789282816
+    m_Key: interakcije
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8052039213056
+    m_Key: uzimanje_urina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8429673373696
+    m_Key: vremensko_ogranicenje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8842669711360
+    m_Key: pokreni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9065848627200
+    m_Key: igra_gotova
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9241602547712
+    m_Key: skoncentriraj_se
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9387702738944
+    m_Key: skoncentriraj_se_opis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9395218931712
+    m_Key: ponovi_razinu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10145185652736
+    m_Key: razina_zavrsena_s_preostalih
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10758199959552
+    m_Key: sljedeca_razina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11168797155328
+    m_Key: vrijeme_isteklo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11273910607872
+    m_Key: pripazi_na_preostalo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12534026330112
+    m_Key: pauza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13031504338944
+    m_Key: nastavak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13190384574464
+    m_Key: izlaz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19636639752192
+    m_Key: broj_sekundi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74523641634816
+    m_Key: vadenje_krvi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79766098010112
+    m_Key: kupanje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81438526398464
+    m_Key: hranjenje
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1625819989880
